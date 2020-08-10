@@ -8,10 +8,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   var bloc = BlocHome();
+  String id;
 
   @override
   void initState() {
     bloc.initOneSignal();
+    bloc.load();
     super.initState();
   }
 
@@ -26,6 +28,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(children: <Widget>[
         Text("Notificações")
       ],),
+     
     );
   }
 }
