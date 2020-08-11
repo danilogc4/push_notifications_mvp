@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:push_mvp/pages/home/bloc/bloc_home.dart';
+import 'package:push_mvp/Notification/one_signal.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -7,13 +7,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  var bloc = BlocHome();
+  var notification = NotificationOneSignal();
   String id;
 
   @override
   void initState() {
-    bloc.initOneSignal();
-    bloc.load();
+    notification.initOneSignal();
+    notification.load();
     super.initState();
   }
 
@@ -25,10 +25,8 @@ class _HomePageState extends State<HomePage> {
         title: Text("FlutterOneSignal"),
         centerTitle: true,
       ),
-      body: Column(children: <Widget>[
-        Text("Notificações")
-      ],),
-     
+      body: Center(child: 
+        Text("Notificações"))
     );
   }
 }
